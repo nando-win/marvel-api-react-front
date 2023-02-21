@@ -18,37 +18,12 @@ export default function Comics() {
     const openModal = (comic) => {
         setSelectedProject(comic);
         setIsOpen(true);
-        returnModal(comic)
     }
 
     const closeModal = () => {
         setSelectedProject(null);
         setIsOpen(false);
     }
-
-    function returnModal(props) {
-        console.log("Modal clicado 2", props.title)
-
-        if (props.title != null) {
-            return (
-                <span>{props.title}</span>
-                //     <Modal
-                //         isOpen={modalIsOpen}
-                //         onRequestClose={closeModal}
-                //         contentLabel="Example Modal"
-                //         overlayClassName="modal-overlay"
-                //         className="modal-content"
-                //     >
-                //         <h1>{selectedProject.title}</h1>
-                //         <hr />
-                //         <p>{selectedProject.description}</p>
-                //         <button onClick={closeModal}>Close</button>
-                //     </Modal>
-            )
-        }
-
-    }
-
 
 
     useEffect(() => {
@@ -66,6 +41,7 @@ export default function Comics() {
                             <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt={`${comic.title}`} />
                             <h3 className='title'>{comic.title}</h3>
                             <button onClick={() => (openModal(comic))}>Informations</button>
+
                             <Modal
                                 isOpen={modalIsOpen}
                                 onRequestClose={closeModal}
@@ -73,9 +49,9 @@ export default function Comics() {
                                 overlayClassName="modal-overlay"
                                 className="modal-content"
                             >
-                                <h1>{comic.title}</h1>
+                                <h1>{selectedProject != null ? selectedProject.title : false}</h1>
                                 <hr />
-                                <p>{comic.description}</p>
+                                <p>{selectedProject != null ? selectedProject.description : false}</p>
                                 <button onClick={closeModal}>Close</button>
                             </Modal>
                         </li>
