@@ -1,0 +1,48 @@
+.covers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.item {
+    margin: 1%;
+    padding: 1%;
+    background-color: dimgray;
+    min-width: 25%;
+    max-width: 25%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    flex-grow: 4;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.title {
+    text-align: center;
+}
+
+.modal-overlay {
+    background: #69696911;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 75%;
+    height: 75%;
+    /* max-width: 500px; */
+    background-color: dimgray;
+    padding: 10px;
+    border-radius: 5px;
+}
