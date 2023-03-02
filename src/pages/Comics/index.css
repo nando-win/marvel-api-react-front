@@ -2,19 +2,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
 }
 
 .item {
-    margin: 1%;
-    padding: 1%;
+    margin: 1vh;
+    padding: 1vh;
     background-color: dimgray;
-    min-width: 25%;
-    max-width: 25%;
+    min-width: 12%;
+    max-width: 15%;
+    max-height: 25%;
     display: flex;
     flex-flow: column;
     justify-content: center;
-    flex-grow: 4;
+}
+
+img {
+    height: fit-content;
 }
 
 ul {

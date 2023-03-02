@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import Modal from '../../components/Modal';
 import Modal from 'react-modal';
-import ReactDOM from 'react-dom/client';
 
 import api from '../../services/api';
 import './index.css'
@@ -43,7 +41,7 @@ export default function Comics() {
                             <button onClick={() => (openModal(comic))}>Informations</button>
 
                             <Modal
-                                isOpen={modalIsOpen}
+                                isOpen={modalIsOpen && selectedProject != null}
                                 onRequestClose={closeModal}
                                 contentLabel="Example Modal"
                                 overlayClassName="modal-overlay"
@@ -51,7 +49,7 @@ export default function Comics() {
                             >
                                 <h1>{selectedProject != null ? selectedProject.title : false}</h1>
                                 <hr />
-                                <p>{selectedProject != null ? selectedProject.description : false}</p>
+                                <div>{selectedProject != null ? selectedProject.description : false}</div>
                                 <button onClick={closeModal}>Close</button>
                             </Modal>
                         </li>
