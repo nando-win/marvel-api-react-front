@@ -3,9 +3,9 @@ import './Header.css'
 
 export default function () {
     return (
-        <header>
-            <div>
-                <p className="title">MARVEL</p>
+        <header className="headerHead">
+            <div className="headerBar">
+                <h1 className="headerTitle">MARVEL</h1>
             </div>
         </header>
     )
